@@ -55,7 +55,7 @@ end
 group :test do
   gem 'factory_bot_rails'
   gem 'faker'
-  gem "nyan-cat-formatter"
+  gem 'nyan-cat-formatter'
   gem "rspec_junit_formatter"
   gem 'shoulda-matchers', '~> 3.0'
   gem 'simplecov'
