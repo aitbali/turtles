@@ -8,7 +8,7 @@ RSpec.describe Turtle, type: :model do
     expect(first_turtle.color).to eq(turtle.color)
     expect(turtle).to be_valid
   end
-  
+
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:color) }
 end
