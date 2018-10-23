@@ -29,12 +29,18 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :development, :test do
+  # Avoid N+1 queries
   gem 'bullet'
+  # Load environment variables from .env into ENV in development
   gem 'dotenv-rails'
-  gem "figaro"
+  gem 'figaro'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
+  # Avoid repeating yourself, use pry-rails instead of copying the initializer to every rails project
   gem 'pry-rails'
+  # Use rspec-rails , a testing framework for Rails 3.x, 4.x and 5.x.
   gem 'rspec-rails', '~> 3.6'
+  # RuboCop is a Ruby static code analyzer and code formatter
   gem 'rubocop', require: false
 end
 
