@@ -5,21 +5,6 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Create api Rails application "turtles" :
+    - " rails new -T --api -dpostgresql - J -T --skip-turbolinks turtles "
 # turtles
