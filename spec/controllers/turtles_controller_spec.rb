@@ -19,7 +19,11 @@ RSpec.describe TurtlesController, type: :controller do
     end
 
     context "with no name" do
-      let(:name )
+      let(:name) { nil }
+      it "fails" do
+        expect{ subject }.not_to(change(Turtle, :count))
+        expect(response).to be_forbidden
+      end
     end
   end
 
@@ -64,7 +68,7 @@ RSpec.describe TurtlesController, type: :controller do
   describe "#update" do
     let!(:turtle) { create(:turtle) }
     let(:id) { turtle.id }
-    let(:name) { Faker.starWars.character }
+    let(:name) { Faker::StarWars::character }
 
     subject do
       patch :update, params: { id: id, name: name }
