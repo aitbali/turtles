@@ -68,7 +68,7 @@ RSpec.describe TurtlesController, type: :controller do
   describe "#update" do
     let!(:turtle) { create(:turtle) }
     let(:id) { turtle.id }
-    let(:name) { Faker::StarWars::character }
+    let(:name) { Faker::StarWars.character }
 
     subject do
       patch :update, params: { id: id, name: name }
