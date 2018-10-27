@@ -3,6 +3,6 @@
     "precommit": "rspec --format progress && rubocop"
   },
   "dependencies": {
-    "husky": "^0.14.3"
+    "husky": "^1.1.2"
   }
 }
