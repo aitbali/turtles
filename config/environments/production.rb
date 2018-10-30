@@ -68,22 +68,8 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.lograge.enabled = true
-  config.lograge.formatter = Lograge::Formatters::Logstash.new
-  config.lograge.base_controller_class = 'ActionController::API'
-  config.lograge.logger = ActiveSupport::Logger.new(STDOUT)
-  config.lograge.custom_options = lambda do |event|
-    {
-      tags: [event.payload[:headers]["action_dispatch.request_id"]],
-      params: event.payload[:params],
-    }
-  end
+  config.log_formatter = ::Logger::Formatter.new
 
-  config.logger = LogStashLogger.new(type: :stdout)
-
-  Rack::Timeout::StateChangeLoggingObserver::STATE_LOG_LEVEL[:ready] = :debug
-  Rack::Timeout::StateChangeLoggingObserver::STATE_LOG_LEVEL[:completed] = :debug
-  Rack::Timeout::Logger.logger = config.logger
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
