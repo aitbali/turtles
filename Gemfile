@@ -30,6 +30,11 @@ gem 'rack-cors'
 # format json response
 gem 'active_model_serializers', '~> 0.10.0'
 
+group :production do
+  gem 'oj'
+  gem 'rollbar'
+end
+
 group :development, :test do
   # Avoid N+1 queries
   gem 'bullet'
