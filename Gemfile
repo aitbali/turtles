@@ -31,6 +31,9 @@ gem 'rack-cors'
 gem 'active_model_serializers', '~> 0.10.0'
 
 group :production do
+  gem 'lograge'
+  gem "logstash-event"
+  gem 'logstash-logger'
   gem 'oj'
   gem 'rollbar'
 end
