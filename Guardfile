@@ -53,6 +53,12 @@ guard :rspec, cmd: "bundle exec rspec" do
     ]
   end
 
+  # Factories
+  watch(%r{#{rspec.spec_dir}/factories/(.*)_factory.rb}) { |m| rspec.spec.call("models/#{m[1]}") }
+
+  # Serializers
+  watch(%r{#{rails.app_dir}/serializers/(.*)/(.*)_serializer.rb}) { |m| rspec.spec.call("controllers/#{m[1]}/#{m[2]}s_controller") }
+
   # Rails config changes
   watch(rails.spec_helper)     { rspec.spec_dir }
   watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
