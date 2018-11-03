@@ -38,11 +38,11 @@ module V1
     private
 
     def create_params
-      params.permit(:id, :name, :color)
+      params.permit(:id, :name, :color, :email)
     end
 
     def update_params
-      params.permit(:id, :name, :color)
+      params.permit(:id, :name, :color, :email)
     end
   end
 end
