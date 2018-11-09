@@ -2,16 +2,10 @@ require "rails_helper"
 
 RSpec.describe TurtleMailer, type: :mailer do
   describe "create" do
-    let(:mail) { TurtleMailer.create }
-    
-    it "renders the headers" do
-      expect(mail.subject).to eq("Create")
-      expect(mail.to).to eq(["to@example.org"])
-      expect(mail.from).to eq(["from@example.com"])
-    end
+    let(:mail) { TurtleMailer.create(create(:turtle)) }
 
-    it "renders the body" do
-      expect(mail.body.encoded).to match("Hi")
+    it "works" do
+      TurtleMailer.create(create(:turtle)).deliver_now
     end
   end
 end
