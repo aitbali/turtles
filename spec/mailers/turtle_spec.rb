@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe TurtleMailer, type: :mailer do
   describe "create" do
     let(:mail) { TurtleMailer.create }
-
+    
     it "renders the headers" do
       expect(mail.subject).to eq("Create")
       expect(mail.to).to eq(["to@example.org"])

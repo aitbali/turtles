@@ -44,7 +44,6 @@ group :development, :test do
   gem 'bullet'
   # Load environment variables from .env into ENV in development
   gem 'dotenv-rails'
-  gem 'figaro'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
   # Avoid repeating yourself, use pry-rails instead of copying the initializer to every rails project

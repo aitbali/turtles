@@ -4,9 +4,9 @@ class TurtleMailer < ApplicationMailer
   #
   #   en.turtle_mailer.create.subject
   #
-  def create
-    @greeting = "Hi"
+  def create(turtle)
+    @turtle_name = turtle.name
 
-    mail to: "to@example.org"
+    mail to: turtle.email
   end
 end
