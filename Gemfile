@@ -27,15 +27,23 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
+gem 'rack-timeout', '~> 0.4'
 # format json response
 gem 'active_model_serializers', '~> 0.10.0'
+
+group :production do
+  gem 'lograge'
+  gem "logstash-event"
+  gem 'logstash-logger'
+  gem 'oj'
+  gem 'rollbar'
+end
 
 group :development, :test do
   # Avoid N+1 queries
   gem 'bullet'
   # Load environment variables from .env into ENV in development
   gem 'dotenv-rails'
-  gem 'figaro'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug', platforms: %i[mri mingw x64_mingw]
   # Avoid repeating yourself, use pry-rails instead of copying the initializer to every rails project
